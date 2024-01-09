@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MegaKorch</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: SBSansText,SBSansDisplay,sans-serif,Arial;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product-card {
+            border: 1px solid #333;
+            margin: 10px;
+            padding: 10px;
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #8654cc;
+        }
+        /* Добавленные стили для выпадающего меню */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
+            padding: 50px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #ddd;}
+        .dropdown input:checked ~ .dropdown-content {
+            display: block;
+        }
+        #close-menu {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            opacity: 0.3;
+            cursor: pointer;
+        }
+        #close-menu:hover {
+            opacity: 1;
+        }
+        #close-menu:before, #close-menu:after {
+            position: absolute;
+            left: 12px;
+            content: ' ';
+            height: 21px;
+            width: 2px;
+            background-color: #333;
+        }
+        #close-menu:before {
+            transform: rotate(45deg);
+        }
+        #close-menu:after {
+            transform: rotate(-45deg);
+        }
+        label[for="menu-checkbox"] {
+            display: inline-block;
+            background-color: #8654cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px; /* Делает форму овальной */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<nav style="background-color: #8654cc; padding: 10px; color: white; display: flex; justify-content: center; border-radius: 50px;">
+    <a href="index.html" style="color: white; margin-right: 10px;">Главная</a>
+    <a href="about.html" style="color: white; margin-right: 10px;">О нас</a>
+    <a href="contact.html" style="color: white; margin-right: 10px;">Контакты</a>
+</nav>
+<h1>MegaKorch</h1>
+<!-- Добавленное выпадающее меню -->
+<div class="dropdown">
+    <label for="menu-checkbox">Категории</label>
+    <input type="checkbox" id="menu-checkbox" style="display: none;">
+    <div id="myDropdown" class="dropdown-content">
+        <a href="#">Категория 1</a>
+        <a href="#">Категория 2</a>
+        <a href="#">Категория 3</a>
+        <div id="close-menu"></div> <!-- Измененная кнопка закрытия меню -->
+    </div>
+</div>
+<div class="product-container">
+    <!-- Продукты -->
+    <!-- Добавьте больше продуктов по аналогии -->
+    <!-- Продукт 1 -->
+    <div class="product-card">
+        <h2>iPhone 15</h2>
+        <img src=https://main-cdn.sbermegamarket.ru/mid9/hlr-system/359/556/643/930/720/100060747347b0.jpg alt="Изображение продукта 1">
+        <p>Цена: 1000 руб.</p>
+        <p>Кэшбек: 50 руб. (5%)</p>
+    </div>
+    <!-- Продукт 2 -->
+    <div class="product-card">
+        <h2>Категория 2</h2>
+        <img src=https://main-cdn.sbermegamarket.ru/mid9/hlr-system/359/556/643/930/720/100060747347b0.jpg alt="Изображение продукта 2">
+        <p>Цена: 2000 руб.</p>
+        <p>Кэшбек: 100 руб. (5%)</p>
+    </div>
+    <!-- Добавленный подвал -->
+    <footer style="background-color: #8654cc; padding: 1px; color: white; position: fixed; bottom: 0; width: 100%;">
+        <p style="text-align: center; color: white;">© 2024 MegaKorch. Все права защищены.</p>
+    </footer>
+</div>
+<script>
+    // Добавленный скрипт для закрытия меню
+    document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('menu-checkbox').checked = false;
+    });
+</script>
+</body>
+</html>
